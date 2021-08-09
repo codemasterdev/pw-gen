@@ -17,6 +17,20 @@
 
 // Assignment code here
 
+// WELCOME PROMPT
+alert("Welcome to your free password generator.");
+
+// PASSWORD LENGTH FUNCTION
+function passwordLength() {
+  var passwordLength = prompt("Please type in the length of the password you would like to have. Please choose 8-128");
+  while (passwordLength < 8 || passwordLength > 128 || passwordLength == null) {
+    alert("Invalid, try again")
+    passwordLength = prompt("choose your character length 8-128")
+  }
+  return passwordLength;
+};
+
+
 
 
 
