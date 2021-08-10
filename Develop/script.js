@@ -30,6 +30,33 @@ function passwordLength() {
   return passwordLength;
 };
 
+// CHOOSE CHARACTER TYPE
+function startPw() {
+
+  alert("Which character types would you like in your password.");
+
+  var hasUppercase = confirm("Would you like uppercase?");
+  var hasLowercase = confirm("How about lowercase letters?");
+  var hasSpecialCharacters = confirm("Would you like some special characters as well?");
+  var hasNumbers = confirm("and how about some numbers?");
+
+  var confirmArray = new Array(hasUppercase, hasLowercase, hasSpecialCharacters, hasNumbers);
+  var falseCheck = confirmArray.every
+    (confirmElement => !confirmElement);
+
+  if (falseCheck) {
+    alert("Please choose a type, try again")
+    startPw();
+  }
+
+
+
+
+
+
+}
+
+
 
 
 
