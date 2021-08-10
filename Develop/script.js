@@ -15,20 +15,9 @@
 // THEN the password is either displayed in an alert or written to the page
 
 
-// Assignment code here
-
 // WELCOME PROMPT
 alert("Welcome to your free password generator.");
 
-// PASSWORD LENGTH FUNCTION
-function passwordLength() {
-  var passwordLength = prompt("Please type in the length of the password you would like to have. Please choose 8-128");
-  while (passwordLength < 8 || passwordLength > 128 || passwordLength == null) {
-    alert("Invalid, try again")
-    passwordLength = prompt("choose your character length 8-128")
-  }
-  return passwordLength;
-};
 
 // CHOOSE CHARACTER TYPE
 function startPw() {
@@ -49,15 +38,56 @@ function startPw() {
     startPw();
   }
 
+  // RANGE TYPES FOR CHARACTER
+  const upperCase = "QWERTYUIOPASDFGHJKLZXCVBNM";
+  const lowerCase = "qwertyuiopasdfghjklzxcvbnm"
+  const specialCharacters = "`~!@#$%^&*|}{?><+-"
+  const numbers = "0123456789"
 
 
+  var characterRange = '';
 
+  if (hasUppercase) {
+    characterRange += upperCase;
+  }
+  if (hasLowercase) {
+    characterRange += lowerCase;
+  }
+  if (hasSpecialCharacters) {
+    characterRange += specialCharacters;
+  }
+  if (hasNumbers) {
+    characterRange += numbers;
+  }
 
+  // RETURN RANGE OF CHARACTERS
+  return characterRange;
 
 }
 
+// PASSWORD LENGTH FUNCTION
+function passwordLength() {
+  var passwordLength = prompt("Please type in the length of the password you would like to have. Please choose 8-128");
+  while (passwordLength < 8 || passwordLength > 128 || passwordLength == null) {
+    alert("Invalid, try again")
+    passwordLength = prompt("choose your character length 8-128")
+  }
+  return passwordLength;
+};
 
+// PASSWORD GENERATOR FUNCTION
+function generatePassword() {
+  var userLength = passwordLength();
+  var characterType = startPw();
 
+  var newPassword = "";
+
+  for (let i = 0; i < userLength; i++) {
+    newPassword += characterType.charAt(Math.floor(Math.random() * characterType.length));
+  }
+
+  return newPassword;
+}
 
 
 
