@@ -23,4 +23,7 @@ A password generator that takes user input using Javascript to generate a random
 - `JavaScript`
 - Coded with `VS Code`
 
+## Images
+
+![](images/pw-gen.png)
 
